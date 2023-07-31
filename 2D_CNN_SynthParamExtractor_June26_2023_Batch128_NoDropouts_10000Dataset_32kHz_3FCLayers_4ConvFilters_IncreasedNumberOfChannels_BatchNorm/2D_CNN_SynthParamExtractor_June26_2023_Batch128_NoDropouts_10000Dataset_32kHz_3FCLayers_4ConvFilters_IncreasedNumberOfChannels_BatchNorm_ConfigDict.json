@@ -1,0 +1,100 @@
+{
+    "paths": {
+        "synthDataset_JSonFile_Path": "/Users/matthew/Desktop/UPF/Courses/Master thesis project (Frederic Font)/Lonce Wyse - Data-Driven Neural Sound Synthesis/Software/Datasets/SDT_FluidFlow_dataset_10000_1sec/SDT_FluidFlow.json",
+        "realDataset_JSonFile_Path": "/Users/matthew/Desktop/UPF/Courses/Master thesis project (Frederic Font)/Lonce Wyse - Data-Driven Neural Sound Synthesis/Software/Datasets/FSD50K_Water_Stream_subset_1sec/FSD50K_Water_Stream_subset_1sec_creatorDescriptorDict.json"
+    },
+    "syntheticDataset_Settings": {
+        "rangeOfColumnNumbers_ToConsiderInCsvFile": [
+            1,
+            5
+        ],
+        "splits": {
+            "train": 0.85,
+            "val": 0.05,
+            "test": 0.1
+        }
+    },
+    "realDataset_Settings": {
+        "rangeOfColumnNumbers_ToConsiderInCsvFile": null
+    },
+    "validation": {
+        "validate_AudioDatasets": true,
+        "nominal_SampleRate": 44100,
+        "nominal_NumOfAudioChannels": 1,
+        "nominal_AudioFileExtension": ".wav",
+        "nominal_BitQuantization": 16,
+        "nominal_AudioDurationSecs": 1.0
+    },
+    "pyTorch_General_Settings": {
+        "device": "cpu",
+        "dtype": "torch.float32",
+        "manual_seed": 42
+    },
+    "inputTransforms_Settings": {
+        "resample": {
+            "new_freq": 32000
+        },
+        "addNoise": {
+            "perform": true,
+            "minimum_LowPassFilter_FreqThreshold": 6000,
+            "maximum_LowPassFilter_FreqThreshold": 14000,
+            "minimumNoiseAmount": 0.005,
+            "maximumNoiseAmount": 0.02
+        },
+        "spectrogram": {
+            "n_fft": 1024,
+            "n_mels": 56
+        }
+    },
+    "neuralNetwork_Settings": {
+        "number_Of_Epochs": 250,
+        "batch_size": 128,
+        "learning_Rate": 0.0005,
+        "dropout_Probability": 0.4,
+        "arguments_For_Convolutional_DynamicNet_Constructor": {
+            "numberOfFeaturesToExtract_IncremMultiplier_FromLayer1": 2,
+            "numberOfConvLayers": 4,
+            "kernelSizeOfConvLayers": 3,
+            "strideOfConvLayers": 1,
+            "kernelSizeOfPoolingLayers": 2,
+            "strideOfPoolingLayers": 2,
+            "numberOfFullyConnectedLayers": 3,
+            "fullyConnectedLayers_InputSizeDecreaseFactor": 4,
+            "inputTensor_Shape": [
+                1,
+                1,
+                56,
+                161
+            ],
+            "numberOfFeatures_ToExtract": 4
+        },
+        "early_Stopping": true,
+        "minimum_NumberOfEpochsToTrain_RegardlessOfEarlyStoppingBeingActive": 250,
+        "loss": {
+            "reduction": "mean"
+        },
+        "activation_Function": {
+            "negative_slope": 0.9
+        },
+        "input_Transforms": {
+            "torchaudio.transforms.Resample": {
+                "orig_freq": 44100,
+                "new_freq": 32000
+            },
+            "torchaudio.transforms.MelSpectrogram": {
+                "normalized": true,
+                "n_mels": 56,
+                "sample_rate": 32000
+            }
+        }
+    },
+    "outputFilesSettings": {
+        "outputFolder_Path": "/Users/matthew/Desktop/UPF/Courses/Master thesis project (Frederic Font)/Lonce Wyse - Data-Driven Neural Sound Synthesis/Software/Neural Networks/2D_CNN_SynthParamExtractor_June26_2023_Batch128_NoDropouts_10000Dataset_32kHz_3FCLayers_4ConvFilters_IncreasedNumberOfChannels_BatchNorm",
+        "jSonFile_WithThisDict_Name": "2D_CNN_SynthParamExtractor_June26_2023_Batch128_NoDropouts_10000Dataset_32kHz_3FCLayers_4ConvFilters_IncreasedNumberOfChannels_BatchNorm",
+        "pyTorch_NN_StateDict_File_Name": "2D_CNN_SynthParamExtractor_June26_2023_Batch128_NoDropouts_10000Dataset_32kHz_3FCLayers_4ConvFilters_IncreasedNumberOfChannels_BatchNorm"
+    },
+    "statistics": {
+        "elapsedTime_WhileTraining": "6:46:33",
+        "dateAndTime_WhenTrainingFinished_dd/mm/YY H:M:S": "27/06/2023 05:07:12"
+    }
+}
