@@ -29,7 +29,7 @@ The pre-trained model state -with best error among all training epochs- of the A
 
 - 2D_CNN_SynthParamExtractor_June26_2023_Batch128_NoDropouts_10000Dataset_32kHz_3FCLayers_4ConvFilters_IncreasedNumberOfChannels_BatchNorm_DBScale_ConfigDict.json
 
-The interface configuration dictionary used as settings, containing also some general information like the path of the dataset used. Paths are local, but you can easily deduce which dataset from https://github.com/Metiu-Metiu/Synthetic-and-real-sounds-datasets-for-SMC_Thesis has been used.
+The interface configuration dictionary used as settings, containing also some general information like the path of the dataset used. Paths are local, but you can easily deduce which dataset from https://github.com/Metiu-Metiu/Neural-Texture-Sound-Synthesis-with-physically-driven-continuous-controls has been used.
 
 - 2D_CNN_SynthParamExtractor_June26_2023_Batch128_NoDropouts_10000Dataset_32kHz_3FCLayers_4ConvFilters_IncreasedNumberOfChannels_BatchNorm_DBScale_ExtractedAudioFilesLabels_SynthDataset.csv / .json
 
