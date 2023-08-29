@@ -1,6 +1,6 @@
 # SMC_Thesis_Trained_Neural_Networks
-PyTorch-based trained Neural Networks for the SMC_Thesis project (https://github.com/Metiu-Metiu/Neural-Texture-Sound-Synthesis-with-physically-driven-continuous-controls).
-Refer to the SMC_Thesis repo's documentation for deeper insights on synthetic-to-real Domain Adaptation.
+PyTorch-based trained Neural Networks for the Neural-Texture-Sound-Synthesis-with-physically-driven-continuous-controls project (https://github.com/Metiu-Metiu/Neural-Texture-Sound-Synthesis-with-physically-driven-continuous-controls).
+Refer to the Neural-Texture-Sound-Synthesis-with-physically-driven-continuous-controls repo's documentation for deeper insights on synthetic-to-real Domain Adaptation.
 
 The Neural Networks are trained on synthetic and real waterflow sound files datasets (https://github.com/Metiu-Metiu/Neural-Texture-Sound-synthesis---data-sets).
 
